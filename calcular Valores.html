@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+   <link href="./styles.css" rel="stylesheet" />
+
+
+    <title>Calcular Valores</title>
+</head>
+<body>
+    <div>
+        <h2>Calcular Resultado</h2>
+    </div>
+
+    <label><strong>Valor mês anterior:</strong></label>
+    <input id="mesAnterior" type="">
+    <label><strong>Valor mês atual:</strong></label>
+    <input id="mesAtual" type="">
+    <button onclick="calcular()">Calcular</button>
+    <h4 id="resultadoFinal"></h4>
+    
+</body>
+<script>
+    function calcPorc(mesAtual,mesAnterior){
+        return((mesAtual - mesAnterior) / mesAnterior) * 100;
+    }
+
+   
+
+
+    function calcular(){
+        var mesAt = Number(document.getElementById("mesAtual").value);
+        var mesAn = Number(document.getElementById("mesAnterior").value);
+        console.log(mesAt);
+        console.log(mesAn);
+        var calculoFinal = calcPorc(mesAt,mesAn);
+        document.getElementById("resultadoFinal").innerText = 
+        `A diferença de um mês para o outro é ${calculoFinal.toFixed(2)} %`;
+
+    }
+   
+</script>
+
+</html>
